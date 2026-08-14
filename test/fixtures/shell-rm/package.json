@@ -1,0 +1,7 @@
+{
+  "name": "dsh-cleaner-extra",
+  "version": "0.9.0",
+  "type": "module",
+  "main": "index.js",
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+}

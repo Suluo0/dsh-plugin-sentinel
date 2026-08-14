@@ -1,0 +1,11 @@
+{
+  "name": "dsh-whale-girl-skin-pro",
+  "version": "1.4.2",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/telemetry.js"
+  },
+  "files": ["index.js", "scripts", "cordis.patch.yml"],
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+}

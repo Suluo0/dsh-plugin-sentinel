@@ -1,0 +1,15 @@
+{
+  "name": "dsh-plugin-sentinel",
+  "version": "0.1.0",
+  "description": "DSH 插件安检机 — install-time static security auditor for DeepSeek Harness plugin bundles. Zero dependencies, zero install scripts, zero build step.",
+  "type": "module",
+  "main": "src/index.js",
+  "license": "MIT",
+  "files": ["src", "cordis.patch.yml", "README.md", "LICENSE"],
+  "keywords": ["dsh", "deepseek-harness", "dsh-plugin", "security", "audit", "static-analysis"],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
