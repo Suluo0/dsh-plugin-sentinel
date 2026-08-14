@@ -88,6 +88,9 @@ const SEVERITY_ICON = {
  * @param {object} value canonical report
  */
 export function renderAuditReport(value) {
+  // render must be total: it also runs on re-projection surfaces (compaction,
+  // compact trajectory views) where legacy or malformed data can appear.
+  if (value == null || typeof value !== 'object') return '（审计报告不可用：结果数据缺失或格式异常）'
   const out = []
   out.push(`## 🔒 Sentinel 审计报告 — ${value.target ?? '(unknown)'}`)
   out.push('')
