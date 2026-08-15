@@ -1,5 +1,7 @@
 # dsh-plugin-sentinel 🔒
 
+[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
+
 **DSH 插件安检机** — 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 装一台插件安检机：在安装任何社区插件**之前**做纯静态安全审计，输出按严重度排序的结构化风险报告。
 
 > 官方文档对 GitHub 安装方式的警告原话：`prepare` 脚本授权是 *"permission to execute the package's code on your machine at install time, outside any sandbox the agent runs under"*。DSH 生态 24 小时收录 288+ 社区插件——这台安检机就是为了让"先过安检再安装"成为一句话的事。
