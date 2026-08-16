@@ -37,7 +37,8 @@ export const CODE_RULES = [
     id: 'JS-EXEC-CHILD-PROCESS',
     severity: 'critical',
     title: 'Spawns operating-system processes',
-    pattern: /\b(?:child_process\s*\.\s*)?(?:execSync|spawnSync|execFileSync|execFile|exec|spawn)\s*\(/,
+    // `child_process.` 前缀或裸调用才算命中；`foo.exec(`（如 RegExp.prototype.exec）不再误判
+    pattern: /\bchild_process\s*\.\s*(?:execSync|spawnSync|execFileSync|execFile|exec|spawn)\s*\(|(?<![.\w$])(?:execSync|spawnSync|execFileSync|execFile|exec|spawn)\s*\(/,
     explanation:
       'The plugin can run arbitrary shell commands. A malicious plugin executes anything on your machine with your user permissions, outside every agent sandbox.',
     mitigation: 'Read every command construction site; reject string-concatenated commands.',

@@ -316,7 +316,7 @@ export async function auditProfile(profileDir, options = {}) {
     const rank = { block: 4, error: 3, review: 2, pass: 1, trusted: 0 }
     return Math.max(acc, rank[b.verdict] ?? 0)
   }, 0)
-  const overallVerdict = ['pass', 'review', 'error', 'review', 'block'][worst] ?? 'pass'
+  const overallVerdict = ['pass', 'pass', 'review', 'error', 'block'][worst] ?? 'pass'
   const flagged = bundles.filter((b) => b.verdict === 'block' || b.verdict === 'review')
   const summary = flagged.length === 0
     ? `profile 内 ${bundles.length} 个 bundle 均未发现问题。`
